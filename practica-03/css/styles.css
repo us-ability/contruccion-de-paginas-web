@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim');
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+}
+
+body * {
+    box-sizing: border-box;
+    outline: 0 none;
+}
+
+h1 {
+    font-size: 1.7rem;
+    font-variant: small-caps;
+    margin: 15px 0 -5px 0;
+    padding: 0 14px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+img {
+    color: #fff;
+    display: block;
+    height: 160px;
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+img[src=""]::after, img:not([src])::after, img.error::after {
+    background: #000;
+    border: 0 none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    content: "Imagen no disponible";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.logotipo {
+    font-family: 'Megrim', cursive;
+    font-size: 29px;
+    line-height: 48px;
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.66);
+    display: inline-block;
+    width: 200px;
+}
+
+.active a {
+    color: #bbb;
+    pointer-events: none;
+}
+
+body>header {
+    color: #fff;
+    display: block;
+    height: 0;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s ease;
+    width: 100%;
+    z-index: 2;
+}
+
+body>header.fixed {
+    background: #000;
+    height: 48px;
+    z-index: 99;
+}
+
+body>header nav {
+    display: block;
+    float: right;
+    width: calc(100% - 200px);
+}
+
+body>header nav ul {
+    float: right;
+    list-style: none;
+}
+
+body>header nav ul li:first-child {
+    display: none;
+}
+
+body>header nav ul li {
+    width: auto;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+body>header ul li a {
+    color: #fff;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+}
+
+body nav button {
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: none;
+    height: 32px;
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    transition: all 0.5s ease;
+    width: auto;
+}
+
+body nav button i {
+    background: #fff;
+    border-radius: 5px;
+    display: block;
+    height: 4px;
+    margin: 5px 0;
+    transition: all 0.25s ease;
+    width: 28px;
+}
+
+body nav button span {
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    display: block;
+    line-height: 32px;
+    margin: 0 5px;
+    width: 32px;
+}
+
+body.menu-open header {
+    z-index: 9;
+}
+
+body.menu-open nav button {
+    margin: 0;
+    padding: 0;
+    right: 4px;
+    top: 6px;
+}
+
+body.menu-open nav button span i:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 9px;
+    position: relative;
+}
+
+body.menu-open nav button span i:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+body.menu-open nav button span i:nth-child(3) {
+    opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+    body>header {
+        background-color: #000;
+    }
+    body>header ul {
+        background: black;
+        display: block;
+        height: 100vh;
+        margin-top: 0;
+        overflow: hidden;
+        padding: 0 0 0 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: all 0.5s ease;
+        white-space: nowrap;
+        width: 0;
+    }
+    body.menu-open>header ul {
+        width: 250px;
+    }
+    body>header nav button {
+        border: 0 none;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        float: right;
+        font-size: 30px;
+        line-height: 48px;
+        transition: all 0.5s ease;
+        width: 40px;
+        z-index: 9;
+    }
+    body>header nav ul li:first-child {
+        display: inherit;
+    }
+    body>header nav ul li {
+        display: block;
+        padding: 10px 8px;
+        width: 100%;
+    }
+    body>header nav ul li h3 {
+        margin-top: 4px;
+    }
+}
+
+/* BANNER */
+
+.banner {
+    color: #fff;
+    background: linear-gradient(45deg, #222, #000);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 250px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.banner b {
+    display: block;
+    font-size: 1.7rem;
+    padding-top: 10vh;
+    width: 100%;
+}
+
+.banner p {
+    display: block;
+    width: 100%;
+}
+
+/* MAIN */
+
+main {
+    width: 75%;
+    display: inline-block;
+}
+
+main article {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    float: left;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    width: calc(50% - 20px);
+}
+
+main article p {
+    margin: 0;
+    min-height: 100px;
+    padding: 0 5px 5px 5px;
+    text-align: justify;
+    vertical-align: top;
+    width: 100%;
+}
+
+main .flash {
+    background: #000;
+    border: 1px solid #222;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-weight: normal !important;
+    overflow: hidden;
+    padding: 5px 10px 5px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+main .flash::before {
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 0 #000, 0 0 3px 0 rgba(0, 0, 0, 0.3) inset, 0 0 5px 0 rgba(0, 0, 0, 0.6) inset;
+    content: "";
+    display: block;
+    left: 5px;
+    height: 4px;
+    position: absolute;
+    top: 12px;
+    transition: all 1s ease-in-out;
+    width: 10px;
+}
+
+main .flash:hover::before {
+    background: linear-gradient(90deg, #ffffff00 0%, #ffffffff 100%);
+    box-shadow: 0 0 6px 0 #fff, 0 0 3px 0 #eee inset, 5px 0 3px 0 rgba(253, 168, 168, 0.5) inset;
+    content: "";
+    left: 100%;
+    opacity: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main article {
+        margin: 5px;
+        border: 0 none;
+        width: calc(100% - 10px);
+    }
+}
+
+/* Barra lateral */
+
+aside {
+    display: block;
+    float: right;
+    margin: 10px 10px 0px 0px;
+    padding: 10px;
+    width: calc(25% - 10px);
+}
+
+aside h2 {
+    color: #000;
+    font-size: 1.8rem;
+    font-variant: small-caps;
+    line-height: 40px;
+    margin: 10px 0 10px 0;
+    text-shadow: none;
+}
+
+aside ul {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    display: inline-block;
+    padding: 5px 8px;
+    width: 100%;
+}
+
+aside ul li a {
+    color: #000;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+}
+
+aside ul+h2 {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+    aside {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+    aside .container {
+        width: auto;
+        display: inline-block;
+    }
+    aside ul li {
+        padding: 5px 10px;
+        width: auto;
+    }
+}
+
+/* Pie de página */
+
+footer {
+    background: linear-gradient(45deg, #222, #000);
+    color: #000;
+    display: inline-block;
+    font-size: 1.0rem;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+}
+
+footer ul:nth-child(2) {
+    float: right;
+}
+
+footer ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    width: calc(100% - 200px);
+}
+
+footer div {
+    border-top: 1px solid #ffffff33;
+    margin: 0;
+    padding: 0;
+}
+
+footer div ul {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 52px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #ccc;
+    transform: translateY(-0.25em);
+}
+
+@media screen and (max-width: 767px) {
+    footer ul {
+        text-align: center;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer ul {
+        text-align: center;
+        width: 100%;
+    }
+    footer div ul li {
+        width: 100%;
+    }
+    footer span.logotipo {
+        text-align: center;
+        width: 100%;
+    }
+}
