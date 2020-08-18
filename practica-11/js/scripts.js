@@ -36,6 +36,12 @@ window.onclick = function (e) {
     }
 }
 
+window.onload = function(){
+    setTimeout(function(){
+      document.querySelector(".loader-container").style.display = "none";
+    },1000);
+}
+
 function showingForm(frm){
     // Por defecto lo que se desea es mostrar el formulario
     var act = 'add';
@@ -54,10 +60,4 @@ function showingForm(frm){
     } else {
         document.body.classList.remove('showing-' + frm);
     }
-}
-
-window.onload = function(){
-    setTimeout(function(){
-      document.querySelector(".loader-container").style.display = "none";
-    },1000);
 }
