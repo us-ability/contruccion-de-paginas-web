@@ -41,12 +41,16 @@
     <meta property="og:description" content="UniversES te ofrece las últimas noticias, fotos y videos sobre el universo recopiladas de fuentes como la NASA, HubbleSite, N2YO, Wikipedia o Sky Map" />
     <meta property="og:title" content="Universo en Español" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/">
+
     <!-- Fuentes de texto vectoriales a utilizar -->
     <!-- FontAwesome 5.12 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+    <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A==" crossorigin="anonymous" />
 
     <!-- Estilos y reglas CSS a utilizar -->
-    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="./css/styles.min.css" rel="stylesheet" type="text/css" />
 </head>
     
 <body class="home">
@@ -67,7 +71,7 @@
 
         <!-- Menú de navegación -->
         <nav>
-            <button class="menu-toggle">
+            <button class="menu-toggle" aria-label="Acceso al menú principal">
                 <span><i></i><i></i><i></i></span>
             </button>
             
@@ -76,7 +80,7 @@
                      P.E: http://universES.org/pages/login/ -->
                 <li><h3>UniversES</h3></li>
 
-                <li class="active"><a href="/UniversES/">Inicio</a></li>
+                <li class="active"><a href="/UniversES/">Home</a></li>
                 <li>
                     <a href="/UniversES/pages/donde-estamos">
                         Dónde estamos
@@ -104,15 +108,21 @@
                 <header>
                     <h2>Vía Láctea desde la Tierra</h2>
                     <picture>
-                        <source srcset="./img/british-columbia-2382640_340.jpg" 
+                        <source srcset="./img/british-columbia-2382640_340.webp"
+                                type="image/webp"
                                 media="(max-width: 1280px)" />
-                        <source srcset="./img/british-columbia-2382640_640.jpg" 
+                        <source srcset="./img/british-columbia-2382640_640.webp"
+                                type="image/webp"
                                 media="(max-width: 1920px)" />
+                        <source srcset="./img/british-columbia-2382640_1280.webp"
+                                type="image/webp"
+                                media="(max-width: 4096px)" />
                     
                         <img src="./img/british-columbia-2382640_1280.jpg" 
                              onerror="this.classList.add('error')" 
                              alt="Vía-Láctea-desde-la-Columbia-Británica" />
                     </picture>
+                    
                 </header>
 
                 <div>
@@ -128,9 +138,21 @@
             <article>
                 <header>
                     <h2>Nebulosa del Águila</h2>
-                    <img src="./img/eagle-nebula-11172_1280.jpg"
-                         onerror="this.classList.add('error')"
-                         alt="M16, NGC-6611">
+                    <picture>
+                        <source srcset="./img/eagle-nebula-11172_340.webp"
+                                type="image/webp"
+                                media="(max-width: 1280px)" />
+                        <source srcset="./img/eagle-nebula-11172_640.webp"
+                                type="image/webp"
+                                media="(max-width: 1920px)" />
+                        <source srcset="./img/eagle-nebula-11172_1280.webp"
+                                type="image/webp"
+                                media="(max-width: 4096px)" />
+
+                        <img src="./img/eagle-nebula-11172_1280.jpg" 
+                             onerror="this.classList.add('error')" 
+                             alt="M16, NGC-6611" />
+                    </picture>
                 </header>
 
                 <div>
@@ -146,9 +168,21 @@
             <article>
                 <header>
                     <h2>Galaxia de Andrómeda</h2>
-                    <img src="./img/m31-3613931_1280.jpg"
-                         onerror="this.classList.add('error')"
-                         alt="M31, NGC-224">
+                    <picture>
+                        <source srcset="./img/m31-3613931_340.webp"
+                                type="image/webp"
+                                media="(max-width: 1280px)" />
+                        <source srcset="./img/m31-3613931_640.webp"
+                                type="image/webp"
+                                media="(max-width: 1920px)" />
+                        <source srcset="./img/m31-3613931_1280.webp"
+                                type="image/webp"
+                                media="(max-width: 4096px)" />
+
+                        <img src="./img/m31-3613931_1280.jpg" 
+                             onerror="this.classList.add('error')" 
+                             alt="M31, NGC-224" />
+                    </picture>
                 </header>
 
                 <div>
@@ -165,9 +199,21 @@
             <article>
                 <header>
                     <h2>Galaxia del sombrero</h2>
-                    <img src="./img/galaxy-67712_1280.jpg"
-                         onerror="this.classList.add('error')"
-                         alt="M104, NGC-4594" />
+                    <picture>
+                        <source srcset="./img/galaxy-67712_340.webp"
+                                type="image/webp"
+                                media="(max-width: 1280px)" />
+                        <source srcset="./img/galaxy-67712_640.webp"
+                                type="image/webp"
+                                media="(max-width: 1920px)" />
+                        <source srcset="./img/galaxy-67712_1280.webp"
+                                type="image/webp"
+                                media="(max-width: 4096px)" />
+                    
+                        <img src="./img/galaxy-67712_1280.jpg"
+                             onerror="this.classList.add('error')"
+                             alt="M104, NGC-4594" />
+                    </picture>
                 </header>
 
                 <div>
@@ -233,12 +279,28 @@
     <footer>
         <span class="logotipo">UniversES</span>
         <ul>
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+            <li>
+                <a href="#" aria-label="Acceder a Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Acceder a Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Acceder a Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Compartir contenido">
+                    <i class="fas fa-share-alt"></i>
+                </a>
+            </li>
         </ul>
-
+    
         <div class="links">
             <ul>
                 <li><a href="#">(c) Copyright 2020</a></li>
@@ -248,6 +310,7 @@
             </ul>    
         </div>
     </footer>
+    
 
     <script type="text/javascript" src="./js/scripts.js"></script>
 </body>
