@@ -1,4 +1,20 @@
+
+// Función para detectar si se pued utilizar o no el formato WebP
+function isSupportsWebp() {
+    var elem = document.createElement('canvas'), supported = false;
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        supported =  elem.toDataURL('image/webp')
+                         .indexOf('data:image/webp') == 0;
+    }
+
+    if(!supported) document.body.classList.add('webp-no-supported');
+}
+
 try{
+    isSupportsWebp(); 
+    
     document.querySelector("header button").onclick = function () {
         document.body.classList.toggle("menu-open")
     }
@@ -60,4 +76,14 @@ function showingForm(frm){
     } else {
         document.body.classList.remove('showing-' + frm);
     }
+}
+
+function fontSizeIncrease(){
+    document.body.style.fontSize =
+           (parseInt(getComputedStyle(document.body).fontSize) + 1) + "px";
+}
+
+function fontSizeDecrease(){
+    document.body.style.fontSize = 
+           (parseInt(getComputedStyle(document.body).fontSize) - 1) + "px";
 }

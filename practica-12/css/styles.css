@@ -481,48 +481,55 @@ body.menu-open nav button span i:nth-child(3) {
     }
 }
 
-/* BANNER */
+/* ******************* */
+/* Baner de entrada    */
+/* ******************* */
 
 .banner {
     color: #fff;
-    background: url(../img/orion-nebula-640.jpg) no-repeat left top / cover;
-    border-bottom: 0 none;
-    display: block;
-    height: 100vh;
-    position: relative;
-    text-align: center;
-    width: 100%;
+    background: url(../img/orion-nebula-640.webp) no-repeat left top/cover;
+    border-bottom: 0 none; display: block; 
+    height: 100vh; position: relative; text-align: center; width: 100%;
 }
+.webp-no-supported .banner { 
+    background: url(../img/orion-nebula-640.jpg) no-repeat left top/cover; }
 
-.banner b {
+.banner b{
     display: block;
     font-size: 1.7rem;
     padding-top: 45vh;
     width: 100%;
 }
 
-.banner p {
-    display: block;
-    width: 100%;
-}
+.banner p { display: block; width: 100%; }
 
 @media (min-width: 800px) {
-    .banner {
-        background-image: url(../img/orion-nebula-1280.jpg);
+    .banner { 
+        background-image: url(../img/orion-nebula-1280.webp); 
+    }
+    .webp-no-supported .banner  { 
+        background-image: url(../img/orion-nebula-1280.jpg); 
     }
 }
 
 @media (min-width: 1366px) {
-    .banner {
-        background-image: url(../img/orion-nebula-1920.jpg);
+    .banner                     { 
+        background-image: url(../img/orion-nebula-1920.webp); 
+    }
+    .webp-no-supported .banner  {
+        background-image: url(../img/orion-nebula-1920.jpg); 
     }
 }
 
 @media (min-width: 2000px) {
-    .banner {
-        background-image: url(../img/orion-nebula-2560.jpg);
+    .banner { 
+        background-image: url(../img/orion-nebula-2560.webp); 
+    }
+    .webp-no-supported .banner  { 
+        background-image: url(../img/orion-nebula-2560.jpg); 
     }
 }
+
 
 /* MAIN */
 
