@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>UniversES - Acceder</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="UniversES - Contactar">
+    <meta name="description" content="Todo sobre nuestro universo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuentes de texto vectoriales a utilizar -->
+    <!-- FontAwesome 5.12 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Estilos y reglas CSS a utilizar -->
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="contact">
+    <!-- Cabecera del documento -->
+    <header>
+        <span class="logotipo">UniversES</span>
+
+        <!-- Menú de navegación -->
+        <nav>
+            <button class="menu-toggle">
+                <span><i></i><i></i><i></i></span>
+            </button>
+
+            <ul>
+                <!-- Los ./ de HREF deben ser reeplazados por la URL local
+                     P.E: http://universES.org/pages/login/ -->
+                <li><h3>UniversES</h3></li>
+
+                <li><a href="/UniversES/">Inicio</a></li>
+                <li>
+                    <a href="/UniversES/pages/donde-estamos">
+                         Dónde estamos
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=”/UniversES/pages/contactar”>Contactar</a>
+                </li>
+                <li>
+                    <a href=”/UniversES/pages/login”>Acceder</a>
+                </li>
+            </ul>
+        </nav>
+        <!--Fin del menú de navegación -->
+    </header>
+
+    <!-- Contenido principal del documento -->
+    <main>
+        <article>
+            <header>
+                <img src="../../img/hubble-telescope-1347645_1920.jpg" 
+                     alt="telescopio-hubble" 
+                     onerror="this.classList.add('error')" />
+            </header>
+
+            <fieldset>
+                <legend>
+                    <span>UniversES</span>
+                    <button class="close">&times;</button>
+                    <button class="toggle" 
+                            onclick="toggleMaximize()"></button>
+                    <button class="minimize">_</button>
+                </legend>
+                
+                <form id="contact" action="" method="post" >
+                    <h1>Contáctanos</h1>
+                    <p>UNIVERSES-BOT dice:</p>
+
+                    <p class="warning" style="color: #fff;">
+                        Antes de nada debes aceptar la Política de
+                        Privacidad y los Términos de uso.
+                    </p>
+
+                    <div class="sentence">
+                        <label for="tyc">¿Las aceptas?</label>
+
+                        <i>#</i>
+
+                        <input type="text" 
+                               id="tyc"
+                               name="tyc"
+                               placeholder="Escribe si deseas continuar"
+                               onkeydown="whenKeydown(event)"
+                               minlength="2"
+                               maxlength="2"
+                               pattern="si|Si|SI"
+                               required
+                               autofocus />
+                        <span class="error-message">
+                            Campo requerido. Sus posibles valores son Sí o
+                            No. Si se eliges "No", no podrás continuar.
+                        </span>
+                    </div>
+
+                    <div class="sentence next">
+                        <label for="name">
+                            Por favor, indica tu nombre
+                        </label>
+
+                        <i>#</i>
+
+                        <input type="text" 
+                               id="name"
+                               name="name"
+                               placeholder="Escribe aquí tu nombre"
+                               onkeydown="whenKeydown(event)"
+                               minlength="3"
+                               required />
+                        <span class="error-message">
+                            Campo requerido. 
+                            La longitud mínima es de 3.
+                        </span>
+                    </div>
+
+                    <div class="sentence next">
+                        <label for="email">
+                            Por favor, indica tu email
+                        </label>
+
+                        <i>#</i>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                               placeholder="Escribe aquí tu email"
+                               onkeydown="whenKeydown(event)"
+                               required />
+                        <span class="error-message">
+                            Email inválido. 
+                            Por favor, introduce un email válido
+                        </span>
+                    </div>
+
+                    <div class="sentence next">
+                        <label for="message-1">
+                            Hola @name, ¿qué deseas saber?
+                        </label>
+
+                        <i>#</i>
+
+                        <input type="text"
+                               id="message-1"
+                               name="message-1"
+                               placeholder="Escribe aquí el motivo"
+                               onkeydown="whenKeydown(event)"
+                               required />
+
+                        <button type="button" 
+                                class="btn accept"
+                                onclick="send(this)">Enviar</button>
+                    </div>
+                </form>
+            </fieldset>
+        </article>
+    </main>
+    <!-- Fin de contenido principal del documento -->
+
+    <!-- Pie del documento o página -->
+    <footer>
+        <span class="logotipo">UniversES</span>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+        </ul>
+
+        <div class="links">
+            <ul>
+                <li><a href="#">(c) Copyright 2020</a></li>
+                <li><a href="#">Aviso Legal</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Contactar</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!—Fin de pie del documento o página -->
+
+    <script type="text/javascript" src="../../js/scripts.js"></script>
+    <script type="text/javascript" src="../../js/contact.js"></script>
+</body>
+</html>

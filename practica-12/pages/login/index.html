@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>UniversES - Acceder</title>
+        <meta charset="UTF-8">
+        <meta name="title" content="UniversES - Acceder">
+        <meta name="description" content="Todo sobre nuestro universo" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Fuentes de texto vectoriales a utilizar -->
+        <!-- FontAwesome 5.12 -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+
+        <!-- Estilos y reglas CSS a utilizar -->
+        <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="login">
+        <!-- Cabecera del documento -->
+        <header>
+            <span class="logotipo">UniversES</span>
+
+            <!-- Menú de navegación -->
+            <nav>
+                <button class="menu-toggle">
+                    <span><i></i><i></i><i></i></span>
+                </button>
+
+                <ul>
+                    <!-- Los ./ de HREF deben ser reeplazados por la URL local
+                        P.E: http://universES.org/pages/login/ -->
+                    <li><h3>UniversES</h3></li>
+
+                    <li><a href="/UniversES/">Inicio</a></li>
+                    <li>
+                        <a href="/UniversES/pages/donde-estamos">
+                            Dónde estamos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/UniversES/pages/contactar">Contactar</a>
+                    </li>
+                    <li class="active">
+                        <a href="/UniversES/pages/login">Acceder</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Fin del menú de navegación -->
+        </header>
+
+        <main>
+            <article>
+                <header>
+                    <img src="../../img/astronomy-3199541.jpg" 
+                        alt="acceso-a-universES-cabecera" 
+                        onerror="this.classList.add('error')" />
+        
+                    <h1>Acceso a UniversEs</h1>
+                    <p>Un multiverso de conocimiento a tu alcance</p>
+        
+                    <div class="actions">
+                        <button class="flash transparent" 
+                                onclick="showingForm('signin')">
+                            Acceder
+                        </button>
+                        <button class="flash transparent toRightSide"
+                            onclick="showingForm('signup')">
+                            Registrarse
+                        </button>
+                    </div>
+                </header>
+        
+                <fieldset class="hidden">
+                    <form id="login" action="" method="post" >
+                        <button type="button" 
+                                class="close"
+                                onclick="showingForm('signin')">X</button>
+        
+                        <h2>Acceder</h2>
+        
+                        <label for="in_username">
+                            <input type="text"
+                                id="in_username"
+                                name="in_username"
+                                autocomplete="off"
+                                required />
+                            <span>Nombre de usuario / Email</span>
+                        </label>
+                        
+                        <label for="in_password">
+                            <input type="password"
+                                id="in_password"
+                                name="in_password"
+                                required />
+                            <span>Contraseña</span>
+                        </label>
+                        
+                        <input type="checkbox" 
+                            id="sessionStarted"
+                            name="sessionStarted"
+                            class="toLeftSide" />
+                        <label for="sessionStarted">
+                            Mantener la sesión iniciada
+                        </label>
+                        
+                        <div class="actions">
+                            <a href="#" style="line-height: 24px;">
+                                Olvidé mi contraseña
+                            </a>
+                            <button class="flash toRightSide"
+                                    style="width: 160px;">
+                                Acceder
+                            </button>
+                        </div>
+                    </form>
+        
+                    <form id="reegister" action="" method="post" >
+                        <button type="button" 
+                                class="close"
+                                onclick="showingForm('signup')">X</button>
+        
+                        <h2>Registrarse</h2>
+        
+                        <label for="up_username">
+                            <input type="text"
+                                id="up_username"
+                                name="up_username"
+                                autocomplete="off"
+                                required />
+                            <span>Nombre de usuario / Email</span>
+                        </label>
+                        
+                        <label for="up_password">
+                            <input type="password"
+                                id="up_password"
+                                name="up_password"
+                                required />
+                            <span>Contraseña</span>
+                        </label>
+        
+                        <label for="up_repeat-password">
+                            <input type="password"
+                                id="up_repeat-password"
+                                name="up_repeat-password"
+                                required />
+                            <span>Repite la contraseña</span>
+                        </label>
+        
+                        <input type="checkbox" 
+                            id="tyc"
+                            name="tyc"
+                            class="toLeftSide"
+                            required />
+                        <label for="tyc">
+                            Estoy de acuerdo con la
+                            <a href="#" target="_blank">
+                                Política de Privacidad y los Términos de uso
+                            </a>
+                        </label>
+                        
+                        <div class="actions">
+                            <button class="flash toRightSide"
+                                    style="width: 200px;">
+                                Registrarse y continuar
+                            </button>
+                        </div>
+                    </form>
+                </fieldset>
+            </article>
+        </main>
+        
+        <!-- Pie del documento o página -->
+        <footer>
+            <span class="logotipo">UniversES</span>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+            </ul>
+
+            <div class="links">
+                <ul>
+                    <li><a href="#">(c) Copyright 2020</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Contactar</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="../../js/scripts.js"></script>
+    </body>
+</html>

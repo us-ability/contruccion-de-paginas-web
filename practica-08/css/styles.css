@@ -1,0 +1,1319 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim');
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;577;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+}
+
+body * {
+    box-sizing: border-box;
+    outline: 0 none;
+}
+
+h1 {
+    font-size: 1.7rem;
+    font-variant: small-caps;
+    margin: 15px 0 -5px 0;
+    padding: 0 14px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+img {
+    color: #fff;
+    display: block;
+    height: 160px;
+    object-fit: cover;
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+img[src=""]::after, img:not([src])::after, img.error::after {
+    background: #000;
+    border: 0 none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    content: "Imagen no disponible";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.logotipo {
+    font-family: 'Megrim', cursive;
+    font-size: 29px;
+    line-height: 48px;
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.66);
+    display: inline-block;
+    width: 200px;
+}
+
+.active a {
+    color: #bbb;
+    pointer-events: none;
+}
+
+body>header {
+    color: #fff;
+    display: block;
+    height: 0;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s ease;
+    width: 100%;
+    z-index: 2;
+}
+
+body>header.fixed {
+    background: #000;
+    height: 48px;
+    z-index: 99;
+}
+
+body>header nav {
+    display: block;
+    float: right;
+    width: calc(100% - 200px);
+}
+
+body>header nav ul {
+    float: right;
+    list-style: none;
+}
+
+body>header nav ul li:first-child {
+    display: none;
+}
+
+body>header nav ul li {
+    width: auto;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+body>header ul li a {
+    color: #fff;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+}
+
+body nav button {
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: none;
+    height: 32px;
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    transition: all 0.5s ease;
+    width: auto;
+}
+
+body nav button i {
+    background: #fff;
+    border-radius: 5px;
+    display: block;
+    height: 4px;
+    margin: 5px 0;
+    transition: all 0.25s ease;
+    width: 28px;
+}
+
+body nav button span {
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    display: block;
+    line-height: 32px;
+    margin: 0 5px;
+    width: 32px;
+}
+
+body.menu-open header {
+    z-index: 9;
+}
+
+body.menu-open nav button {
+    margin: 0;
+    padding: 0;
+    right: 4px;
+    top: 6px;
+}
+
+body.menu-open nav button span i:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 9px;
+    position: relative;
+}
+
+body.menu-open nav button span i:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+body.menu-open nav button span i:nth-child(3) {
+    opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+    body>header {
+        background-color: #000;
+    }
+    body>header ul {
+        background: black;
+        display: block;
+        height: 100vh;
+        margin-top: 0;
+        overflow: hidden;
+        padding: 0 0 0 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: all 0.5s ease;
+        white-space: nowrap;
+        width: 0;
+    }
+    body.menu-open>header ul {
+        width: 250px;
+    }
+    body>header nav button {
+        border: 0 none;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        float: right;
+        font-size: 30px;
+        line-height: 48px;
+        transition: all 0.5s ease;
+        width: 40px;
+        z-index: 9;
+    }
+    body>header nav ul li:first-child {
+        display: inherit;
+    }
+    body>header nav ul li {
+        display: block;
+        padding: 10px 8px;
+        width: 100%;
+    }
+    body>header nav ul li h3 {
+        margin-top: 4px;
+    }
+}
+
+/* BANNER */
+
+.banner {
+    color: #fff;
+    background: url(../img/orion-nebula-640.jpg) no-repeat left top / cover;
+    border-bottom: 0 none;
+    display: block;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.banner b {
+    display: block;
+    font-size: 1.7rem;
+    padding-top: 45vh;
+    width: 100%;
+}
+
+.banner p {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .banner {
+        background-image: url(../img/orion-nebula-1280.jpg);
+    }
+}
+
+@media (min-width: 1366px) {
+    .banner {
+        background-image: url(../img/orion-nebula-1920.jpg);
+    }
+}
+
+@media (min-width: 2000px) {
+    .banner {
+        background-image: url(../img/orion-nebula-2560.jpg);
+    }
+}
+
+/* MAIN */
+
+main {
+    width: 75%;
+    display: inline-block;
+}
+
+main article {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    float: left;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    width: calc(50% - 20px);
+}
+
+main article p {
+    margin: 0;
+    min-height: 100px;
+    padding: 0 5px 5px 5px;
+    text-align: justify;
+    vertical-align: top;
+    width: 100%;
+}
+
+main .flash {
+    background: #000;
+    border: 1px solid #222;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-weight: normal !important;
+    overflow: hidden;
+    padding: 5px 10px 5px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+main .flash::before {
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 0 #000, 0 0 3px 0 rgba(0, 0, 0, 0.3) inset, 0 0 5px 0 rgba(0, 0, 0, 0.6) inset;
+    content: "";
+    display: block;
+    left: 5px;
+    height: 4px;
+    position: absolute;
+    top: 12px;
+    transition: all 1s ease-in-out;
+    width: 10px;
+}
+
+main .flash:hover::before {
+    background: linear-gradient(90deg, #ffffff00 0%, #ffffffff 100%);
+    box-shadow: 0 0 6px 0 #fff, 0 0 3px 0 #eee inset, 5px 0 3px 0 rgba(253, 168, 168, 0.5) inset;
+    content: "";
+    left: 100%;
+    opacity: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main article {
+        margin: 5px;
+        border: 0 none;
+        width: calc(100% - 10px);
+    }
+}
+
+/* Barra lateral */
+
+aside {
+    display: block;
+    float: right;
+    margin: 10px 10px 0px 0px;
+    padding: 10px;
+    width: calc(25% - 10px);
+}
+
+aside h2 {
+    color: #000;
+    font-size: 1.8rem;
+    font-variant: small-caps;
+    line-height: 40px;
+    margin: 10px 0 10px 0;
+    text-shadow: none;
+}
+
+aside ul {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    display: inline-block;
+    padding: 5px 8px;
+    width: 100%;
+}
+
+aside ul li a {
+    color: #000;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+}
+
+aside ul+h2 {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+    aside {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+    aside .container {
+        width: auto;
+        display: inline-block;
+    }
+    aside ul li {
+        padding: 5px 10px;
+        width: auto;
+    }
+}
+
+/* Pie de página */
+
+footer {
+    background: linear-gradient(45deg, #222, #000);
+    color: #000;
+    display: inline-block;
+    font-size: 1.0rem;
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+}
+
+footer ul:nth-child(2) {
+    float: right;
+}
+
+footer ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    width: calc(100% - 200px);
+}
+
+footer div {
+    border-top: 1px solid #ffffff33;
+    margin: 0;
+    padding: 0;
+}
+
+footer div ul {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 52px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #ccc;
+    transform: translateY(-0.25em);
+}
+
+@media screen and (max-width: 767px) {
+    footer ul {
+        text-align: center;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer ul {
+        text-align: center;
+        width: 100%;
+    }
+    footer div ul li {
+        width: 100%;
+    }
+    footer span.logotipo {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* **************************************************** */
+
+/* Estilos para páginas con formato de 1 única columna  */
+
+/* **************************************************** */
+
+.one-column-page aside, .one-column-page .banner {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.one-column-page main {
+    width: 100%;
+}
+
+.one-column-page main article {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.one-column-page main article>header>img {
+    height: 250px;
+}
+
+.one-column-page main article>div {
+    padding: 10px;
+}
+
+.one-column-page main article>div p {
+    float: none;
+    margin: 10px 0;
+    min-height: auto;
+}
+
+/* ************************************************ */
+
+/* Sección de referencias                           */
+
+/* ************************************************ */
+
+.references h2 {
+    background: linear-gradient(90deg, #fff, #f0f0f0);
+    border-radius: 0 100px 100px 0;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.references p {
+    text-align: left;
+}
+
+.references p a {
+    color: #333;
+}
+
+/* ************************************************ */
+
+/* Sección de relacionados                          */
+
+/* ************************************************ */
+
+.related h2 {
+    background: linear-gradient(90deg, #fff, #f0f0f0);
+    border-radius: 0 100px 100px 0;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.related p {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 24px;
+    padding: 0;
+    text-align: left;
+    width: auto;
+}
+
+.related p a {
+    color: #333;
+    display: block;
+    font-weight: bold;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+.relateda::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 0 0;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+
+/* ************************************************ */
+
+/* Diseño de Tablas                                 */
+
+/* ************************************************ */
+
+table {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-spacing: 2px;
+    margin: 10px 0;
+}
+
+table caption {
+    background: #000000;
+    color: #fff;
+    font-size: 1.0rem;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+table td, table th {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-spacing: 0;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: left;
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 1280px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    thead {
+        display: none;
+    }
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+    tbody td {
+        border: 0 none;
+        display: block;
+        text-align: right;
+    }
+    tbody td img {
+        width: 100% !important;
+    }
+    tbody td:before {
+        content: attr(data-field);
+        display: block;
+        float: left;
+        font-weight: bold;
+        padding: 0 10px 0 0;
+        text-align: left;
+        width: auto;
+    }
+}
+
+/* ************************************************ */
+
+/* Práctica 7: Formularios de login y registro      */
+
+/* ************************************************ */
+
+.toLeftSide {
+    float: left !important;
+}
+
+.toRightSide {
+    float: right !important;
+}
+
+input {
+    border: 0 none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    width: 100%;
+}
+
+input:not([type=checkbox]):focus+span, label input:valid:not([type="checkbox"])+span {
+    font-weight: 900;
+    top: 0;
+}
+
+label {
+    color: #000;
+    display: block;
+    font-size: 0.9rem;
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+label input:not([type="checkbox"])+span {
+    font-size: 1rem;
+    font-weight: 300;
+    left: 10px;
+    position: absolute;
+    top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    margin-right: 5px;
+    position: relative;
+    top: 8px;
+    transition: all 180ms linear;
+    width: 18px;
+}
+
+input[type="checkbox"]:before {
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 16px;
+    transition: all 180ms linear;
+    width: 16px;
+}
+
+input[type="checkbox"]:checked:before {
+    background: linear-gradient(45deg, #000 0%, #212121 150%);
+    border: 1px solid #111;
+}
+
+input[type="checkbox"]:after {
+    border: 2px solid #fff;
+    border-right: 0;
+    border-top: 0;
+    content: '';
+    display: block;
+    height: 4px;
+    left: 2px;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    transform: rotate(-45deg);
+    transition: all 180ms linear;
+    width: 12px;
+}
+
+input[type="checkbox"]:checked:after {
+    opacity: 1;
+}
+
+input[type="checkbox"]+span {
+    color: #333;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.00933333em;
+    line-height: 24px;
+    margin: 0;
+}
+
+.flash.transparent {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.75));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #000;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 250px;
+    padding: 8px 10px;
+    width: 80%;
+}
+
+.flash.transparent::before {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0));
+    box-shadow: none;
+}
+
+.flash.link::before {
+    opacity: 0;
+}
+
+.login main a, main a:active, main a:visited, main a:focus {
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.login {
+    background: #000;
+    overflow-y: scroll;
+}
+
+.login main {
+    width: 100%;
+}
+
+.login main article {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.login main article>header>img {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    transition: all 0.33s ease;
+}
+
+.login main article p {
+    min-height: auto;
+}
+
+.login main .flash {
+    padding: 5px 10px;
+}
+
+.login fieldset {
+    background: repeating-linear-gradient(0deg, rgb(255, 255, 255) 3px, rgb(252, 252, 252) 6px);
+    background-position: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0 none;
+    border-radius: 5px;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin: 5px auto -10px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    transition: all 0.33s ease;
+    width: 100%;
+    z-index: 0;
+}
+
+.login header .actions {
+    display: block;
+    position: absolute;
+    top: 42vh;
+    text-align: center;
+    transition: all 0.33s ease;
+    width: 100%;
+}
+
+.login form .actions {
+    display: inline-block;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.login header h1 {
+    color: #fff;
+    font-family: 'Megrim', sans-serif;
+    font-size: 2rem;
+    font-variant: small-caps;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 55%;
+    width: 100%;
+    transition: all 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+}
+
+.login header h1+p {
+    color: #fff;
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: calc(55% + 32px);
+    transition: all 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+    width: 100%;
+}
+
+.login h2 {
+    color: #aaa;
+    display: block;
+    float: none;
+    font-family: 'Turret Road', monospace;
+    font-size: 21px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+/* Este es el botón de cerrar el formulario abierto */
+
+button.close {
+    background: linear-gradient(45deg, #000 0%, #212121 150%);
+    border-radius: 3px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.login.showing-signin form:nth-child(1) {
+    display: block;
+}
+
+.login.showing-signin form:nth-child(2) {
+    display: none;
+}
+
+.login.showing-signup form:nth-child(1) {
+    display: none;
+}
+
+.login.showing-signup form:nth-child(2) {
+    display: block;
+}
+
+.login.showing-signin main article>header img, .login.showing-signup main article>header img {
+    height: 250px;
+}
+
+.login.showing-signin fieldset, .login.showing-signup fieldset {
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    height: auto;
+    margin-top: -25px;
+    min-height: calc(100vh - 250px);
+    max-height: 1000px;
+    padding: 10px;
+    width: calc(100% - 10px);
+}
+
+.login header .actions {
+    top: calc(50% - 24px);
+}
+
+.login header .actions button {
+    margin: 0 5vw 10px 5vw;
+    width: 40vw;
+    float: left;
+}
+
+.login.showing-signin .login header h2, .login.showing-signup .login header h2, .login.showing-signin .login header h2+p, .login.showing-signup .login header h2+p {
+    width: 0;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 640px) {
+    .login header .actions button {
+        width: inherit;
+        float: none !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .login header .actions button {
+        margin-bottom: 0;
+    }
+    .login fieldset {
+        max-width: 80%;
+    }
+}
+
+/* ************************************************ */
+
+/* Práctica 8: Formulario de contactar              */
+
+/* ************************************************ */
+
+.contact {
+    background: #000;
+    overflow-x: hidden;
+}
+
+.contact main {
+    width: 100%;
+}
+
+.contact main article {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.contact main article>header>img {
+    height: 250px;
+    margin: 0;
+    width: 100%;
+}
+
+.contact main article p {
+    min-height: auto;
+}
+
+.contact fieldset {
+    background: repeating-linear-gradient(0deg, rgb(0, 0, 0) 1px, rgb(32, 32, 32) 2px, rgb(16, 16, 16) 3px);
+    background-position: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    bottom: auto;
+    box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
+    display: block;
+    margin: -25px auto 0 auto;
+    padding: 0px;
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 64vh;
+    width: calc(64vh * 1.78);
+    z-index: 0;
+}
+
+.contact fieldset::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 10px;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-image: linear-gradient( 0deg, rgba(0, 0, 0, 0) 0%, rgba(64, 64, 64, 0.2) 0.5%, rgba(64, 64, 64, 0.6) 1%, rgba(64, 64, 64, 0.2) 1.5%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+    background-repeat: no-repeat;
+    animation: scan 10s linear 0s infinite;
+}
+
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+    .contact fieldset {
+        height: 62.9vh;
+        width: calc(62.9vh * 1.5);
+    }
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .contact fieldset {
+        height: 56.4vh;
+        width: calc(56.4vh * 1.5);
+    }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+    .contact fieldset {
+        height: 58vh;
+        width: calc(58vh * 1.4);
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+    .contact fieldset {
+        height: 56.2vh;
+        width: calc(56.2vh * 1.5);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .contact fieldset {
+        width: calc(100vw - 20px);
+        height: 60.5vh;
+    }
+}
+
+@keyframes scan {
+    0% {
+        opacity: 1;
+        background-position: 0 -100vh;
+    }
+    35%, 100% {
+        opacity: 0;
+        background-position: 0 100vh;
+    }
+}
+
+.contact fieldset * {
+    color: #FF2E82;
+    display: block;
+    float: none;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    height: auto;
+    letter-spacing: 0.15em;
+    line-height: 1.4rem;
+    margin: 0;
+    padding: 0 0 5px 0;
+    position: relative;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .contact fieldset * {
+        font-size: 1.2rem;
+    }
+}
+
+.contact fieldset legend {
+    background: linear-gradient(180deg, #000, rgba(0, 0, 0, 0));
+    border-bottom: 1px solid #000;
+    height: 32px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.contact fieldset legend span {
+    color: rgba(255, 255, 255, 0.6);
+    display: none;
+    font-family: 'Megrim', cursive;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 0 10px;
+    width: 200px;
+}
+
+.contact fieldset legend button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #222;
+    border-top: 0 none;
+    border-radius: 0 0 4px 0;
+    color: #aaa;
+    cursor: default;
+    font-size: 17px;
+    font-family: monospace;
+    height: 24px;
+    letter-spacing: normal;
+    line-height: 26px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 0px;
+    width: 24px;
+}
+
+.contact fieldset legend .close {
+    font-size: 19px;
+    line-height: 28px;
+}
+
+.contact fieldset legend .minimize {
+    border-radius: 0 0 0 4px;
+    line-height: 18px;
+    right: 66px;
+}
+
+.contact fieldset legend .toggle {
+    border-radius: 0;
+    cursor: pointer;
+    right: 43px;
+}
+
+.contact fieldset legend button.toggle::before {
+    border: 1px solid #aaa;
+    content: "";
+    height: 8px;
+    left: 6px;
+    position: absolute;
+    top: 8px;
+    width: 9px;
+}
+
+.contact fieldset legend button.toggle::after {
+    background: #aaa;
+    content: "";
+    height: 2px;
+    left: 7px;
+    position: absolute;
+    top: 9px;
+    width: 9px;
+}
+
+.contact fieldset form {
+    display: block;
+    height: calc(100% - 32px);
+    overflow: auto;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    top: 32px;
+}
+
+.contact fieldset form input {
+    background: transparent;
+    border: 0 none;
+    color: #a8a8a8;
+    display: inline-block;
+    padding: 0 8px 0 20px;
+    margin: 0 0 15px 0;
+    text-transform: lowercase;
+    width: 100%;
+}
+
+.contact fieldset form button {
+    background: rgba(255, 46, 130, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: "Inconsolata", monospace;
+    font-size: 1rem;
+    font-weight: 800;
+    height: 2rem;
+    line-height: 1.3rem;
+    margin: 15px auto 0;
+    max-width: 300px;
+    padding: 5px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.contact fieldset form .error-message {
+    position: absolute;
+    color: #fff;
+    display: none;
+    font-weight: bold;
+    top: 50px;
+}
+
+.contact fieldset h1 {
+    color: #ffc24c;
+    font-size: 1.6rem;
+    margin: 1.2rem 0 0.6rem;
+    padding: 0;
+}
+
+.contact fieldset form p {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact fieldset .sentence {
+    position: relative;
+}
+
+.contact fieldset .sentence i {
+    float: left;
+    height: 0;
+    left: 0;
+    line-height: 0;
+    pointer-events: none;
+    position: relative;
+    top: 10px;
+    width: 0;
+}
+
+.contact fieldset .next {
+    display: none;
+}
+
+.contact.maximized {
+    overflow: hidden;
+}
+
+.contact.maximized fieldset {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 25px;
+    width: 100%;
+    z-index: 9;
+}
+
+.contact.maximized fieldset legend span {
+    display: inline-block;
+}
+
+.contact.maximized fieldset legend button.toggle::before {
+    border: 1px solid #aaa;
+    background: #000;
+    content: "";
+    height: 7px;
+    left: 7px;
+    position: absolute;
+    top: 6px;
+    width: 9px;
+}
+
+.contact.maximized fieldset legend button.toggle::after {
+    border: 1px solid #aaa;
+    background: #000;
+    content: "";
+    height: 7px;
+    left: 4px;
+    position: absolute;
+    top: 10px;
+    width: 9px;
+}
+
+.contact.maximized fieldset form {
+    height: calc(100% - 28px);
+    overflow: auto;
+}
+
+@media screen and (max-width: 768px){
+    .contact fieldset h1{ font-size: 1.8rem; }    
+    .contact fieldset * { font-size: 1.2rem; }
+    .contact fieldset form input + i + div > span { width: 100%; }
+}
